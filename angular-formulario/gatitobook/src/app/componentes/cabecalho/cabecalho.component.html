@@ -1,11 +1,16 @@
 <header class="sticky-top">
   <nav class="navbar navbar-light bg-white">
     <a class="navbar-brand">
-      <i class="fa fa-bars mr-2"></i>
+      <i
+        class="fa fa-bars mr-2"
+        (click)="menu.abreMenu()"
+        (keyup.space)="menu.abreMenu()"
+      >
+      </i>
       Gatito Book
     </a>
 
-    <app-menu>
+    <app-menu #menu>
       <ul class="list-unstyled">
         <li>
           <a [routerLink]="['animais', 'novo']">Novo Animal</a>
@@ -20,7 +25,6 @@
         <a (click)="logout()">Logout</a>
       </div>
     </div>
-
   </nav>
 
   <ng-template #login>
