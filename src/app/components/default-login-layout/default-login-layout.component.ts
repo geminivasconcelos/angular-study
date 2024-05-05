@@ -22,4 +22,5 @@ export class DefaultLoginLayoutComponent {
   @Input() title: string = '';
   @Input() primaryBtnText: string = '';
   @Input() secondaryBtnText: string = '';
+  @Input() subtitleDefaoult: string = '';
 }
