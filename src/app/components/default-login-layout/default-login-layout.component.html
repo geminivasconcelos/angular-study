@@ -17,7 +17,7 @@
       class="w-full justify-center items-center mt-8 flex-col flex gap-10 mb-5"
     >
       <div class="w-full flex justify-center items-center">
-        <button pButton app-button-default [label]="primaryBtnText"></button>
+        <button pButton app-button-default [label]="primaryBtnText" (click)="submit()"></button>
       </div>
 
       <div class="divider">
@@ -31,6 +31,7 @@
           pButton
           app-button-defaul-white
           [label]="secondaryBtnText"
+          (click)="navigate()"
         ></button>
       </div>
     </mat-card-actions>

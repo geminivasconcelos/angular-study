@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { ButtonDefaultComponent } from '../button-default/button-default.component';
@@ -23,4 +23,14 @@ export class DefaultLoginLayoutComponent {
   @Input() primaryBtnText: string = '';
   @Input() secondaryBtnText: string = '';
   @Input() subtitleDefaoult: string = '';
+  @Output('submit') onSubmit = new EventEmitter();
+  @Output('navigate') onNavigate = new EventEmitter();
+
+  submit(){
+    this.onSubmit.emit();
+  }
+
+  navigate(){
+    this.onNavigate.emit();
+  }
 }
