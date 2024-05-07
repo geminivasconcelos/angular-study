@@ -17,6 +17,7 @@ import { ButtonDefaultComponent } from '../../components/button-default/button-d
 import { ButtonModule } from 'primeng/button';
 import { ButtonDefaulWhiteComponent } from '../../components/button-defaul-white/button-defaul-white.component';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -43,10 +44,21 @@ import { DefaultLoginLayoutComponent } from '../../components/default-login-layo
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
     });
+  }
+
+  submit() {}
+
+  navigate() {
+    this.router.navigate(["/register"])
   }
 }
