@@ -6,16 +6,14 @@
   (navigate)="navigate()"
 >
   <div
-    class="card flex justify-content-center items-center w-full flex-col gap-10 mt-12"
+    class="flex justify-content-center items-center w-full flex-col gap-10 mt-12"
     [formGroup]="loginForm"
   >
     <div class="flex flex-col w-2/3 gap-1">
       <span class="flex float-start text-gray-b600 ml-2 font-medium text-sm"
         >Email Adress</span
       >
-      <div
-        class="card flex justify-content-center items-center w-full flex-col"
-      >
+      <div class="flex justify-content-center items-center w-full flex-col">
         <p-inputGroup class="w-full flex flex-col">
           <input
             type="text"
@@ -25,7 +23,7 @@
             formControlName="email"
           />
           <p-inputGroupAddon
-            class="bg-blue-b100 flex justify-center items-center"
+            class="bg-blue-b150 flex justify-center items-center"
           >
             <span class="material-symbols-outlined icon-input"> mail </span>
           </p-inputGroupAddon>
@@ -37,10 +35,8 @@
       <span class="flex float-start text-gray-b600 ml-2 font-medium text-sm"
         >Password</span
       >
-      <div
-        class="card flex justify-content-center items-center w-full flex-col"
-      >
-        <p-inputGroup class="w-full flex flex-col">
+      <div class="flex justify-content-center items-center w-full flex-col">
+        <p-inputGroup class="w-full flex flex-col items-center justify-center">
           <input
             type="password"
             pInputText
@@ -49,7 +45,7 @@
             formControlName="password"
           />
           <p-inputGroupAddon
-            class="bg-blue-b100 flex justify-center items-center"
+            class="bg-blue-b150 flex justify-center items-center"
           >
             <span class="material-symbols-outlined icon-input"> lock </span>
           </p-inputGroupAddon>
