@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         blue: {
+          b150: "#3753FC",
           b100: "#0783FF",
           b200: "#0878E9",
           b300: "#0466C8",
