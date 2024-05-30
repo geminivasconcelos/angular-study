@@ -1,0 +1,42 @@
+.main-principal {
+  .container-gastos {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .gasto-mes {
+      background: white;
+      width: 20%;
+      height: 7rem;
+      border-radius: 10px;
+
+      .p-gastos {
+        font-weight: 300;
+        font-size: 14px;
+        font-family: "Kanit";
+
+        padding-left: 0.8rem;
+        padding-top: 0.5rem;
+      }
+
+      .span-gastos {
+        font-size: 10px;
+        color: gray;
+
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 0.8rem;
+      }
+
+      .p-data {
+        font-size: 36px;
+        font-family: "Kanit";
+        font-weight: 500;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+    }
+  }
+}
