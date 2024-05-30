@@ -18,19 +18,16 @@ import { ButtonModule } from 'primeng/button';
 import { ButtonDefaulWhiteComponent } from '../../components/button-defaul-white/button-defaul-white.component';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
-    // MatCardModule,
     FormsModule,
     InputTextModule,
     InputGroupAddonModule,
     InputGroupModule,
-    // CardModule,
-    // IconFieldModule,
-    // InputIconModule,
     ButtonDefaultComponent,
     ButtonDefaulWhiteComponent,
     ButtonModule,
@@ -44,9 +41,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor(
-    private router: Router
-  ) {
+  constructor(private router: Router, private loginService: LoginService) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -56,9 +51,15 @@ export class LoginComponent {
     });
   }
 
-  submit() {}
+  submit() {
+    console.log(this.loginForm.value);
+    this.loginService.login(this.loginForm.value).subscribe({
+      next: () => console.log('sucesso'),
+      error: () => console.log('error'),
+    });
+  }
 
   navigate() {
-    this.router.navigate(["/register"])
+    this.router.navigate(['/register']);
   }
 }
