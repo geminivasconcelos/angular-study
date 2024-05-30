@@ -18,6 +18,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
+import { UtilsService } from '../../services/utils.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -69,7 +70,7 @@ export class SidenavComponent implements OnInit {
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
-  date1: Date | undefined;
+  dateFiltro: Date | undefined;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -82,6 +83,8 @@ export class SidenavComponent implements OnInit {
       });
     }
   }
+
+  constructor(private utilisService: UtilsService) {}
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
@@ -101,5 +104,13 @@ export class SidenavComponent implements OnInit {
       collapsed: this.collapsed,
       screenWidth: this.screenWidth,
     });
+  }
+
+  filtrarGastos(data: any) {
+    this.utilisService.emitFiltroDataSideNav(data);
+  }
+
+  limparFiltroGastosMes(){
+
   }
 }
