@@ -8,11 +8,12 @@
 
   <div class="container-calendar">
     <p-calendar
-
-      [(ngModel)]="date1"
+      [(ngModel)]="dateFiltro"
       [showIcon]="true"
       inputId="buttondisplay"
       [showOnFocus]="false"
+      (onSelect)="filtrarGastos($event)"
+      (onClear)="limparFiltroGastosMes()"
     />
   </div>
 
